@@ -26,6 +26,6 @@ namespace ObjectOverrides
         // Method Overrides.
         public override string ToString() => $"[First Name: {FirstName}; Last Name: {LastName}; Age: {Age}]";
         public override bool Equals(object obj) => obj?.ToString() == ToString();
-        public override int GetHashCode() => SSN.GetHashCode();
+        public override int GetHashCode() => ToString().GetHashCode();
     }
 }
