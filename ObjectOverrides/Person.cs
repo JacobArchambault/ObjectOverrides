@@ -20,5 +20,6 @@ namespace ObjectOverrides
         }
         public Person() { }
         public override string ToString() => $"[First Name: {FirstName}; Last Name: {LastName}; Age: {Age}]";
+        public override bool Equals(object obj) => obj?.ToString() == ToString();
     }
 }
