@@ -19,5 +19,6 @@ namespace ObjectOverrides
             Age = personAge;
         }
         public Person() { }
+        public override string ToString() => $"[First Name: {FirstName}; Last Name: {LastName}; Age: {Age}]";
     }
 }
