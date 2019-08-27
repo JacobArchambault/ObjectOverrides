@@ -8,6 +8,14 @@ namespace ObjectOverrides
 {
     class Program
     {
+        static void StaticMembersOfObject()
+        {
+            Person p3 = new Person("Sally", "Jones", 4);
+            Person p4 = new Person("Sally", "Jones", 4);
+            Console.WriteLine("p3 and p4 have the same state: {0}", object.Equals(p3, p4));
+            Console.WriteLine("p3 and p4 are pointing to the same object: {0}", object.ReferenceEquals(p3, p4));
+            Console.WriteLine();
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("***** Fun with System.Object *****");
@@ -33,6 +41,7 @@ namespace ObjectOverrides
             Console.WriteLine("p2.ToString() = {0}", p2.ToString());
             Console.WriteLine("p1 = p2?: {0}", p1.Equals(p2));
             Console.WriteLine("Same hash codes?: {0}", p1.GetHashCode() == p2.GetHashCode());
+            StaticMembersOfObject();
             Console.ReadLine();
         }
     }
